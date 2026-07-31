@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="BlankProject/BlankProject.vcxproj" Id="c15e74f6-d047-4e88-b093-bef5d7692f30" />
+  <Project Path="Olympus/Olympus.vcxproj" Id="66e3fdb9-f297-4fc3-8291-b0041664a27f" />
+</Solution>
