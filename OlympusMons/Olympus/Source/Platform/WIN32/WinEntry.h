@@ -3,12 +3,12 @@
 
 extern IApplication* entryApplication();
 
-int CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
+int CALLBACK wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine, _In_ int nShowCmd)
 {
 	auto EntryApp = entryApplication();
 
 	PerGameSettings GameSettings;
-	
+
 	EntryApp->SetupPerGameSettings();
 	EntryApp->Initialize();
 
@@ -30,3 +30,5 @@ int CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 	return 0;
 }
+
+

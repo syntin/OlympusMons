@@ -1,5 +1,7 @@
 #include "Olympus.h"
+#include "Logger.h"
 #include <ShlObj.h>
+
 
 Logger* Logger::instance;
 
@@ -10,7 +12,7 @@ Logger::Logger()
 
 Logger::~Logger()
 {
-
+	// Desotry random shit
 }
 
 VOID Logger::PrintLog(const WCHAR* fmt, ...)
@@ -24,9 +26,21 @@ VOID Logger::PrintLog(const WCHAR* fmt, ...)
 
 	OutputDebugString(buf);
 
-	// Example file and Location = %AppData%/OlympusMons/Log/OlympusMons080126.log
+	// Example file and Location = %AppData%/OlympusMons/Log/OlympusMons080126000000.log
 	std::wfstream outfile;
 	outfile.open(std::wstring(LogDirectory() + L"/" + LogFile()), std::ios_base::app);
+
+	if (outfile.is_open())
+	{
+		std::wstring s = buf;
+		outfile << L"[" << Time::GetDateTimeString() << L"] " << s << std::endl;
+		outfile.close();
+		OutputDebugString(s.c_str());
+	}
+	else
+	{
+		MessageBox(0,L"Failed to open log file", L"Log Error", MB_OK);
+	}
 }
 
 std::wstring Logger::LogDirectory()
@@ -37,9 +51,9 @@ std::wstring Logger::LogDirectory()
 	wcscpy_s(Path, AppDataLocal);
 	wcscat_s(Path, L"\\");
 	wcscat_s(Path, PerGameSettings::GameName());
-	CreateDirectory(Path, NULL);
+	CreateDirectoryW(Path, NULL);
 	wcscat_s(Path, L"\\Log");
-	CreateDirectory(Path, NULL);
+	CreateDirectoryW(Path, NULL);
 	return Path;
 }
 

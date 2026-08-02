@@ -6,6 +6,9 @@
 
 class OLYMPUS_API Logger
 {
+private:
+	static Logger* instance;
+
 public:
 	Logger();
 	virtual ~Logger();
@@ -17,7 +20,6 @@ public:
 	static std::wstring LogFile();
 
 private:
-	static Logger* instance;
 	std::wstring logDirectory;
 	std::wstring logFile;
 };
