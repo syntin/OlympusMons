@@ -22,12 +22,12 @@ namespace Win32 {
 
 		RECT R = { 0, 0, _width, _height };
 		AdjustWindowRect(&R, WS_OVERLAPPEDWINDOW, false);
-		int _width = R.right - R.left;
-		int _height = R.bottom - R.top;
+		int width = R.right - R.left;
+		int height = R.bottom - R.top;
 
 		_handle = CreateWindow(_wClass.c_str(), _title.c_str(),
-			WS_POPUP, ((desktop.right / 2) - (_width / 2)), ((desktop.bottom / 2) - (_height / 2)),
-			_width, _height, nullptr, nullptr, HInstance(), (void*)this);
+			WS_POPUP, ((desktop.right / 2) - (width / 2)), ((desktop.bottom / 2) - (height / 2)),
+			width, height, nullptr, nullptr, HInstance(), (void*)this);
 
 		ShowWindow(_handle, SW_SHOW);
 		UpdateWindow(_handle);
