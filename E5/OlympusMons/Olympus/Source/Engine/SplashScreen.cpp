@@ -7,13 +7,13 @@ namespace SplashScreen {
 
 #define WM_OUTPUTMESSAGE (WM_USER + 0x0001)
 
-	SplashWindow* m_SplashWindow;
+	SplashWindow* splashWindow;
 
 	VOID Open()
 	{
-		if (m_SplashWindow != nullptr)
+		if (splashWindow != nullptr)
 			return;
-		m_SplashWindow = new SplashWindow();
+		splashWindow = new SplashWindow();
 	}
 
 	VOID Close()
@@ -23,7 +23,7 @@ namespace SplashScreen {
 
 	VOID AddMessage(const WCHAR* message)
 	{
-		PostMessage(m_SplashWindow->GetHandle(), WM_OUTPUTMESSAGE, (WPARAM)message, 0);
+		PostMessage(splashWindow->GetHandle(), WM_OUTPUTMESSAGE, (WPARAM)message, 0);
 	}
 }
 
@@ -31,7 +31,7 @@ namespace SplashScreen {
 SplashWindow::SplashWindow()
 	: Win32::Window(L"SplashScreen", L"SplashScreen", NULL, 500, 600)
 {
-	wcscpy_s(m_outputMessage, L"SplashScreen Starting...");
+	wcscpy_s(outputMessage, L"SplashScreen Starting...");
 	Win32::Window::RegisterNewClass();
 	Win32::Window::Initialize();
 
@@ -69,14 +69,14 @@ LRESULT SplashWindow::MessageHandler(HWND hwnd, UINT message, WPARAM wParam, LPA
 
 		SetTextAlign(hdc, TA_CENTER);
 
-		TextOut(hdc, width / 2, height - 30, m_outputMessage, static_cast<int>(wcslen(m_outputMessage)));
+		TextOut(hdc, width / 2, height - 30, outputMessage, static_cast<int>(wcslen(outputMessage)));
 		EndPaint(hwnd, &ps);
 	}
 	break;
 	case WM_OUTPUTMESSAGE:
 	{
 		WCHAR* msg = (WCHAR*)wParam;
-		wcscpy_s(m_outputMessage, msg);
+		wcscpy_s(outputMessage, msg);
 		RedrawWindow(GetHandle(), NULL, NULL, RDW_INVALIDATE);
 		return 0;
 	}
