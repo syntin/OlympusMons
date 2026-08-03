@@ -26,7 +26,8 @@ namespace Win32 {
 		int height = R.bottom - R.top;
 
 		handle = CreateWindow(wClass.c_str(), title.c_str(),
-			WS_POPUP, ((desktop.right / 2) - (width / 2)), ((desktop.bottom / 2) - (height / 2)), width, height, 0, 0, HInstance(), (void*)this);
+			WS_POPUP, ((desktop.right / 2) - (width / 2)), ((desktop.bottom / 2) - (height / 2)),
+			width, height, nullptr, nullptr, HInstance(), (void*)this);
 
 		ShowWindow(handle, SW_SHOW);
 		UpdateWindow(handle);
