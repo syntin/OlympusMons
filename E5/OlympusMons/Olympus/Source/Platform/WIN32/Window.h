@@ -13,8 +13,8 @@ namespace Win32 {
 		virtual VOID Initialize() override;
 
 	protected:
-		INT width;
-		INT height;
+		INT _width;
+		INT _height;
 	};
 
 }

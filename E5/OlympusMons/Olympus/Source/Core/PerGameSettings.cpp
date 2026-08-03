@@ -7,10 +7,10 @@ PerGameSettings::PerGameSettings()
 
 	instance = this;
 
-	wcscpy_s(instance->gameName, L"undefined");
-	wcscpy_s(instance->shortName, L"undefined");
-	wcscpy_s(instance->bootTime, Time::GetDateTimeString(TRUE).c_str());
-	wcscpy_s(instance->splashURL, L"..\\Olympus\\Content\\Images\\OlympusSplash.bmp");
+	wcscpy_s(instance->_gameName, L"undefined");
+	wcscpy_s(instance->_shortName, L"undefined");
+	wcscpy_s(instance->_bootTime, Time::GetDateTimeString(TRUE).c_str());
+	wcscpy_s(instance->_splashURL, L"..\\Olympus\\Content\\Images\\OlympusSplash.bmp");
 }
 
 PerGameSettings::~PerGameSettings()

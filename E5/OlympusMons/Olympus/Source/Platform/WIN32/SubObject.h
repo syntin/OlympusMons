@@ -20,13 +20,13 @@ namespace Win32 {
 		virtual	LRESULT	MessageHandler(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) = 0;
 
 	protected:
-		std::wstring wClass;
-		std::wstring title;
-		HICON hIcon;
-		HWND handle;
+		std::wstring _wClass;
+		std::wstring _title;
+		HICON _hIcon;
+		HWND _handle;
 
 	public:
-		HWND GetHandle() { return handle; }
+		HWND GetHandle() { return _handle; }
 
 	};
 

@@ -19,12 +19,7 @@ INT CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 	Logger logger;
 
 	EntryApp->PreInitialize();
-
-
-
 	EntryApp->Initialize();
-
-
 
 	MSG msg = { 0 };
 	while (msg.message != WM_QUIT)

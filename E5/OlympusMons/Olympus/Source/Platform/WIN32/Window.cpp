@@ -3,8 +3,8 @@
 
 namespace Win32 {
 
-	Window::Window(std::wstring className, std::wstring classTitle, HICON icon, INT w, INT ht)
-		: Win32::SubObject(className, classTitle, icon), width(w), height(ht)
+	Window::Window(std::wstring className, std::wstring classTitle, HICON icon, INT width, INT height)
+		: Win32::SubObject(className, classTitle, icon), _width(width), _height(height)
 	{
 
 	}
@@ -20,17 +20,17 @@ namespace Win32 {
 		const HWND hDesktop = GetDesktopWindow();
 		GetWindowRect(hDesktop, &desktop);
 
-		RECT R = { 0, 0, width, height };
+		RECT R = { 0, 0, _width, _height };
 		AdjustWindowRect(&R, WS_OVERLAPPEDWINDOW, false);
-		int width = R.right - R.left;
-		int height = R.bottom - R.top;
+		int _width = R.right - R.left;
+		int _height = R.bottom - R.top;
 
-		handle = CreateWindow(wClass.c_str(), title.c_str(),
-			WS_POPUP, ((desktop.right / 2) - (width / 2)), ((desktop.bottom / 2) - (height / 2)),
-			width, height, nullptr, nullptr, HInstance(), (void*)this);
+		_handle = CreateWindow(_wClass.c_str(), _title.c_str(),
+			WS_POPUP, ((desktop.right / 2) - (_width / 2)), ((desktop.bottom / 2) - (_height / 2)),
+			_width, _height, nullptr, nullptr, HInstance(), (void*)this);
 
-		ShowWindow(handle, SW_SHOW);
-		UpdateWindow(handle);
+		ShowWindow(_handle, SW_SHOW);
+		UpdateWindow(_handle);
 
 	}
 

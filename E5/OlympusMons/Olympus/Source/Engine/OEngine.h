@@ -29,7 +29,7 @@ public:
 	~OEngine();
 
 private:
-	EngineMode engineMode;
+	EngineMode _engineMode;
 
 public:
 	EngineMode GetEngineMode();

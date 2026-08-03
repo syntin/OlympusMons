@@ -17,5 +17,5 @@ public:
 	virtual LRESULT MessageHandler(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) override;
 
 private:
-	WCHAR outputMessage[MAX_NAME_STRING];
+	WCHAR _outputMessage[MAX_NAME_STRING];
 };

@@ -38,9 +38,9 @@ namespace Engine {
 OEngine::OEngine()
 {
 #ifdef _DEBUG
-	engineMode = EngineMode::DEBUG;
+	_engineMode = EngineMode::DEBUG;
 #else
-	engineMode = EngineMode::RELEASE;
+	_engineMode = EngineMode::RELEASE;
 #endif
 }
 
@@ -50,12 +50,12 @@ OEngine::~OEngine()
 
 EngineMode OEngine::GetEngineMode()
 {
-	return engineMode;
+	return _engineMode;
 }
 
 VOID OEngine::SetEngineMode(EngineMode mode)
 {
-	engineMode = mode;
+	_engineMode = mode;
 }
 
 

@@ -4,7 +4,7 @@
 namespace Win32 {
 
 	SubObject::SubObject(std::wstring className, std::wstring classTitle, HICON icon)
-		: wClass(className), title(classTitle), hIcon(icon)
+		: _wClass(className), _title(classTitle),	_hIcon(icon)
 	{
 	}
 
@@ -22,9 +22,9 @@ namespace Win32 {
 		wcex.cbWndExtra = 0;
 		wcex.hCursor = LoadCursor(nullptr, IDC_ARROW);
 		wcex.hbrBackground = (HBRUSH)(CreateSolidBrush(RGB(46, 46, 46)));
-		wcex.hIcon = hIcon;
-		wcex.hIconSm = hIcon;
-		wcex.lpszClassName = wClass.c_str();
+		wcex.hIcon = _hIcon;
+		wcex.hIconSm = _hIcon;
+		wcex.lpszClassName = _wClass.c_str();
 		wcex.lpszMenuName = nullptr;
 		wcex.hInstance = HInstance();
 		wcex.lpfnWndProc = SetupMessageHandler;
