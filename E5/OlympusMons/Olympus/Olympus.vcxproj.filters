@@ -59,13 +59,6 @@
     <Filter Include="Source\Platform\Win32\Private">
       <UniqueIdentifier>{dd5372dd-7297-40ff-8708-5f0b32a4d268}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Content">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Content\Images">
-      <UniqueIdentifier>{36b54e3b-d42a-4187-8d4f-9ff1fdda9c0e}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Olympus.h">
@@ -163,10 +156,5 @@
     <ClCompile Include="Source\Platform\WIN32\Window.cpp">
       <Filter>Source\Platform\Win32\Private</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Content\Images\OlympusSplash.bmp">
-      <Filter>Content\Images</Filter>
-    </Image>
   </ItemGroup>
 </Project>

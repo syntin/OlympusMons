@@ -19,16 +19,13 @@
       <Filter>Source\pch</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
-      <Filter>Resources</Filter>
+      <Filter>Content</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Resources">
-      <UniqueIdentifier>{00460497-12b7-4751-a783-511f09103874}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source">
       <UniqueIdentifier>{6eb612e5-f102-430d-beb8-f848a41567d8}</UniqueIdentifier>
     </Filter>
@@ -41,15 +38,27 @@
     <Filter Include="Source\pch">
       <UniqueIdentifier>{c2eb2efa-6b90-460a-95b7-2e18bfc6a4bc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Content">
+      <UniqueIdentifier>{00460497-12b7-4751-a783-511f09103874}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Content\Icons">
+      <UniqueIdentifier>{cdd35a28-0c10-4ab1-b495-5a600e8edcca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Content\Images">
+      <UniqueIdentifier>{580e6f9d-eff1-4fa0-a25d-19a74e950727}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="BlankProject.rc">
-      <Filter>Resources</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Content\Icons\OlympusMons.ico">
-      <Filter>Resources</Filter>
+    <Image Include="Content\Images\BlankProjectSplash.bmp">
+      <Filter>Content\Images</Filter>
     </Image>
+    <Image Include="Content\Icons\OlympusMons.ico">
+      <Filter>Content\Icons</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Game.rc">
+      <Filter>Content</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

@@ -1,18 +1,21 @@
 #pragma once
 
-#define ENTRYAPP(x) IApplication* entryApplication() { return new x; }
+#define ENTRYAPP(x) Win32::IApplication* EntryApplication() { return new x; }
 
-class OLYMPUS_API IApplication
+namespace Win32
 {
-public:
-	IApplication();
-	virtual ~IApplication() {}
+	class OLYMPUS_API IApplication
+	{
+	public:
+		IApplication();
+		virtual ~IApplication() {}
 
-public:
-	virtual void SetupPerGameSettings() = 0;
-	virtual void PreInitialize() = 0;
-	virtual void Initialize() = 0;
-	virtual void Update() = 0;
-};
+	public:
+		virtual void SetupPerGameSettings() = 0;
+		virtual void PreInitialize() = 0;
+		virtual void Initialize() = 0;
+		virtual void Update() = 0;
+	};
 
-IApplication* entryApplication();
+	IApplication* EntryApplication();
+}

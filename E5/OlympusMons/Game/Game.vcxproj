@@ -115,10 +115,11 @@
     <ClInclude Include="Source\pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="BlankProject.rc" />
+    <ResourceCompile Include="Game.rc" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Content\Icons\OlympusMons.ico" />
+    <Image Include="Content\Images\BlankProjectSplash.bmp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Olympus\Olympus.vcxproj">

@@ -187,9 +187,6 @@
     <ClCompile Include="Source\Platform\WIN32\Win32Utils.cpp" />
     <ClCompile Include="Source\Platform\WIN32\Window.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="Content\Images\OlympusSplash.bmp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

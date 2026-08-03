@@ -11,6 +11,7 @@ namespace Engine {
 		SERVER
 	};
 
+	// True Global Variable for the Engine
 	extern OEngine g_OlympusEngine;
 
 	VOID OLYMPUS_API SetMode(EngineMode mode);
@@ -21,14 +22,14 @@ namespace Engine {
 }
 
 using namespace Engine;
-class OLYMPUS_API OEngine {
-
+class OLYMPUS_API OEngine
+{
 public:
 	OEngine();
 	~OEngine();
 
 private:
-	EngineMode m_EngineMode;
+	EngineMode engineMode;
 
 public:
 	EngineMode GetEngineMode();

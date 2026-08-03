@@ -1,6 +1,7 @@
 #include "Olympus.h"
 #include "CmdLineArgs.h"
 #include <algorithm>
+#include <shellapi.h>
 
 VOID CmdLineArgs::ReadArguments()
 {
@@ -9,7 +10,8 @@ VOID CmdLineArgs::ReadArguments()
 
 	for (int i = 1; i < argc; ++i) {
 		std::wstring key = argv[i];
-		if (key[0] == '-') {
+		if (key[0] == '-')
+		{
 			key.erase(0, 1);
 			std::transform(key.begin(), key.end(), key.begin(), ::tolower);
 			ReadArgument(key.c_str());

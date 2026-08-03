@@ -27,9 +27,8 @@ void Application::Initialize()
 	Logger::PrintLog(L"Application Starting...");
 	Logger::PrintLog(L"Game Name: %s", PerGameSettings::GameName());
 	Logger::PrintLog(L"Boot Time: %s", Time::GetDateTimeString().c_str());
+	Logger::PrintLog(L"Engine Mode: %s", Engine::EngineModeToString().c_str());
 	Logger::PrintDebugSeparator();
-
-	Logger::StartMTail();
 }
 
 void Application::Update()

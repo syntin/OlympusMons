@@ -19,24 +19,28 @@ namespace Engine {
 	{
 		switch (Engine::GetMode())
 		{
-		case EngineMode::DEBUG:		return L"Debug";
-		case EngineMode::RELEASE:	return L"Release";
-		case EngineMode::SERVER:	return L"Server";
-		case EngineMode::EDITOR:	return L"Editor";
-		default:     return L"None";
+		case EngineMode::DEBUG:
+			return L"Debug";
+		case EngineMode::RELEASE:
+			return L"Release";
+		case EngineMode::SERVER:
+			return L"Server";
+		case EngineMode::EDITOR:
+			return L"Editor";
+		default:
+			return L"None";
 		}
 	}
 
 
 }
 
-
 OEngine::OEngine()
 {
 #ifdef _DEBUG
-	m_EngineMode = EngineMode::DEBUG;
+	engineMode = EngineMode::DEBUG;
 #else
-	m_EngineMode = EngineMode::RELEASE;
+	engineMode = EngineMode::RELEASE;
 #endif
 }
 
@@ -46,12 +50,12 @@ OEngine::~OEngine()
 
 EngineMode OEngine::GetEngineMode()
 {
-	return m_EngineMode;
+	return engineMode;
 }
 
 VOID OEngine::SetEngineMode(EngineMode mode)
 {
-	m_EngineMode = mode;
+	engineMode = mode;
 }
 
 
