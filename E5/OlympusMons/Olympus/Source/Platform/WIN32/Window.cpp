@@ -6,12 +6,10 @@ namespace Win32 {
 	Window::Window(std::wstring className, std::wstring classTitle, HICON icon, INT width, INT height)
 		: Win32::SubObject(className, classTitle, icon), _width(width), _height(height)
 	{
-
 	}
 
 	Window::~Window()
 	{
-
 	}
 
 	VOID Window::Initialize()
@@ -31,7 +29,5 @@ namespace Win32 {
 
 		ShowWindow(_handle, SW_SHOW);
 		UpdateWindow(_handle);
-
 	}
-
 }
