@@ -11,8 +11,6 @@ namespace Olympus {
 		~Simulation();
 
 		virtual VOID PreInitialize() override;
-
-
 	};
 }
 
