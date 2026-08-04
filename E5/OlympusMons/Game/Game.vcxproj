@@ -61,7 +61,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>BlankProject.h</PrecompiledHeaderFile>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <AdditionalIncludeDirectories>$(SolutionDir)\Game\Source;$(SolutionDir)\Olympus\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -86,7 +86,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>BlankProject.h</PrecompiledHeaderFile>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <AdditionalIncludeDirectories>$(SolutionDir)\Game\Source;$(SolutionDir)\Olympus\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -105,21 +105,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Application.cpp" />
-    <ClCompile Include="Source\pch.cpp" />
-    <ClCompile Include="Source\WinMain.cpp" />
+    <ClCompile Include="Source\BlankProject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
-    <ClInclude Include="Source\Application.h" />
-    <ClInclude Include="Source\pch.h" />
+    <ClInclude Include="Source\BlankProject.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Content\Icons\OlympusMons.ico" />
-    <Image Include="Content\Images\BlankProjectSplash.bmp" />
+    <Image Include="Content\Images\OlympusSplash.bmp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Olympus\Olympus.vcxproj">

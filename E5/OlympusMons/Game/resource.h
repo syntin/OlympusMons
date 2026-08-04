@@ -1,11 +1,12 @@
 //{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
-// Used by BlankProject.rc
+// Used by Game.rc
 //
 #define IDI_MAINICON                    101
 #define IDS_PERGAMENAME                 102
 #define IDS_WINDOWCLASS                 103
 #define IDS_SHORTNAME                   104
+#define IDS_SPLASHURL                   105
 
 // Next default values for new objects
 // 

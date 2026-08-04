@@ -6,12 +6,6 @@
 #endif
 
 #include <string>
+#include <wchar.h>
 #include "Core/Core.h"
-/*
-#define MAX_NAME_STRING 256
-#define HInstance() GetModuleHandle(NULL)
 
-#include "Common/Logger.h"
-#include "Common/Time.h"
-#include "Core/PerGameSettings.h"
-*/

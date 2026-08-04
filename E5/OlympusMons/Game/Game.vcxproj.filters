@@ -1,25 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Source\Application.cpp">
-      <Filter>Source\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\pch.cpp">
-      <Filter>Source\pch</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\WinMain.cpp">
+    <ClCompile Include="Source\BlankProject.cpp">
       <Filter>Source\Private</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Application.h">
-      <Filter>Source\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\pch.h">
-      <Filter>Source\pch</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Content</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BlankProject.h">
+      <Filter>Source\Public</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -49,7 +40,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Content\Images\BlankProjectSplash.bmp">
+    <Image Include="Content\Images\OlympusSplash.bmp">
       <Filter>Content\Images</Filter>
     </Image>
     <Image Include="Content\Icons\OlympusMons.ico">

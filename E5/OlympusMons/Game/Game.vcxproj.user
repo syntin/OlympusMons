@@ -8,5 +8,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LocalDebuggerCommandArguments>-mtail -editor</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArgumentsHistory>-mtail -editor|</LocalDebuggerCommandArgumentsHistory>
   </PropertyGroup>
 </Project>

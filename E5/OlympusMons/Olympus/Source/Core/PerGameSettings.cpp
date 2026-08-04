@@ -13,6 +13,3 @@ PerGameSettings::PerGameSettings()
 	wcscpy_s(instance->_splashURL, L"..\\Olympus\\Content\\Images\\OlympusSplash.bmp");
 }
 
-PerGameSettings::~PerGameSettings()
-{
-}

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Core.h"
+
 class OLYMPUS_API PerGameSettings
 {
 private:
@@ -8,7 +10,7 @@ private:
 
 public:
 	PerGameSettings();
-	~PerGameSettings();
+	~PerGameSettings() {}
 
 private:
 	WCHAR _gameName[MAX_NAME_STRING];

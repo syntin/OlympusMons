@@ -5,7 +5,7 @@
 
 namespace SplashScreen {
 
-#define WM_OUTPUTMESSAGE (WM_USER + 0x0001)
+	#define WM_OUTPUTMESSAGE (WM_USER + 0x0001)
 
 	SplashWindow* splashWindow;
 
@@ -48,9 +48,8 @@ LRESULT SplashWindow::MessageHandler(HWND hwnd, UINT message, WPARAM wParam, LPA
 	{
 		case WM_PAINT:
 		{
-			//HBITMAP hbitmap;
-			HDC hdc;
-			//HDC hmemdc;
+			HBITMAP hbitmap;
+			HDC hdc, hmemdc;
 			PAINTSTRUCT ps;
 
 			hdc = BeginPaint(hwnd, &ps);

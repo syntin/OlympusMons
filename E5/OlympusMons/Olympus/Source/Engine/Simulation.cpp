@@ -22,6 +22,4 @@ VOID Olympus::Simulation::PreInitialize()
 	Logger::PrintDebugSeparator();
 
 	SplashScreen::Open();
-
-
 }
