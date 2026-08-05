@@ -1,0 +1,58 @@
+#include "Olympus.h"
+#include "SubObject.h"
+
+namespace Win32 {
+
+	SubObject::SubObject(WSTRING className, WSTRING classTitle, HICON icon)
+		: _wClass(className), _title(classTitle),	_hIcon(icon)
+	{
+	}
+
+	SubObject::~SubObject()
+	{
+	}
+
+
+	VOID SubObject::RegisterNewClass()
+	{
+		WNDCLASSEX wcex;
+		wcex.cbSize = sizeof(WNDCLASSEX);
+		wcex.style = CS_HREDRAW | CS_VREDRAW;
+		wcex.cbClsExtra = 0;
+		wcex.cbWndExtra = 0;
+		wcex.hCursor = LoadCursor(nullptr, IDC_ARROW);
+		wcex.hbrBackground = (HBRUSH)(CreateSolidBrush(RGB(46, 46, 46)));
+		wcex.hIcon = _hIcon;
+		wcex.hIconSm = _hIcon;
+		wcex.lpszClassName = _wClass.c_str();
+		wcex.lpszMenuName = nullptr;
+		wcex.hInstance = HInstance();
+		wcex.lpfnWndProc = SetupMessageHandler;
+		RegisterClassEx(&wcex);
+	}
+
+
+	LRESULT SubObject::SetupMessageHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+	{
+		if (msg == WM_NCCREATE)
+		{
+			const CREATESTRUCTW* const pCreate = reinterpret_cast<CREATESTRUCTW*>(lParam);
+			Win32::SubObject* const pWnd = static_cast<Win32::SubObject*>(pCreate->lpCreateParams);
+			SetWindowLongPtr(hWnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(pWnd));
+			SetWindowLongPtr(hWnd, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(&Win32::SubObject::AssignMessageHandler));
+			return pWnd->MessageHandler(hWnd, msg, wParam, lParam);
+		}
+		return DefWindowProc(hWnd, msg, wParam, lParam);
+	}
+
+	LRESULT SubObject::AssignMessageHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+	{
+		Win32::SubObject* const pWnd = reinterpret_cast<Win32::SubObject*>(GetWindowLongPtr(hWnd, GWLP_USERDATA));
+		return pWnd->MessageHandler(hWnd, msg, wParam, lParam);
+	}
+
+	LRESULT SubObject::MessageHandler(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
+	{
+		return DefWindowProc(hwnd, message, wParam, lParam);
+	}
+}
